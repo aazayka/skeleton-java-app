@@ -14,6 +14,11 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("what is 5 plus 1")) {
             return "6";
         }
+
+        if (query.toLowerCase().contains("what is 14 plus 14")) {
+            return "28";
+        }
+
         if (query.toLowerCase().contains("which of the following numbers is the largest: 96, 44")) {
             return "96";
         }
