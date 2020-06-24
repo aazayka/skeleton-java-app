@@ -8,7 +8,7 @@ public class QueryProcessor {
         }
 
         if (query.toLowerCase().contains("what is your name")) {
-            return "Andrey Z :)";
+            return "Andrey Z";
         }
 
         return "";
