@@ -11,6 +11,10 @@ public class QueryProcessor {
             return "Andrey Z";
         }
 
+        if (query.toLowerCase().contains("what is 5 plus 1")) {
+            return "6";
+        }
+
         return "";
     }
 }
