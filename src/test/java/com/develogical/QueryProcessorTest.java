@@ -11,11 +11,6 @@ public class QueryProcessorTest {
   QueryProcessor queryProcessor = new QueryProcessor();
 
   @Test
-  public void whoAmI() {
-    assertThat(queryProcessor.process("what is your name"), containsString("Andrey Z"));
-  }
-
-  @Test
   public void knowsWhoWroteRomeoAndJuliet() throws Exception {
     assertThat(queryProcessor.process("Who wrote Romeo And Juliet"), containsString("Shakespeare"));
   }
