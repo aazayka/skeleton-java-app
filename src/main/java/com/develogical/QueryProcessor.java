@@ -39,7 +39,7 @@ public class QueryProcessor {
     }
 
     private String largest(String toLowerCase) {
-        OptionalInt x = Arrays.stream(toLowerCase.replace("which of the following numbers is the largest: ", "").split(","))
+        OptionalInt x = Arrays.stream(toLowerCase.substring(toLowerCase.indexOf("largest: ")+9).split(","))
         .map(String::trim)
                 .mapToInt(Integer::valueOf)
         .max();

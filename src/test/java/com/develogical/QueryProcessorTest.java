@@ -22,7 +22,7 @@ public class QueryProcessorTest {
 
   @Test
   public void largest() {
-    assertThat(queryProcessor.process("which of the following numbers is the largest: 86, 41, 947, 761"), containsString("947"));
+    assertThat(queryProcessor.process("xxx: which of the following numbers is the largest: 86, 41, 947, 761"), containsString("947"));
   }
 
   @Test
