@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.OptionalInt;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class QueryProcessor {
 
@@ -35,7 +36,36 @@ public class QueryProcessor {
             return largest(query.toLowerCase());
         }
 
+        if (query.toLowerCase().contains("which of the following numbers are primes:")) {
+            return prime(query.toLowerCase());
+        }
+
+
         return "";
+    }
+
+    private String prime(String toLowerCase) {
+        return Arrays.stream(toLowerCase.substring(toLowerCase.indexOf("primes: ")+9).split(","))
+                .map(String::trim)
+                .filter(xx->checkPrime(Integer.valueOf(xx)))
+                .collect(Collectors.joining(","));
+    }
+
+    boolean checkPrime(int n){
+        int i,m=0,flag=0;
+        m=n/2;
+        if(n==0||n==1){
+            return false;
+        }else{
+            for(i=2;i<=m;i++){
+                if(n%i==0){
+                    flag=1;
+                    break;
+                }
+            }
+            if(flag==0)  { return true; }
+        }//end of else
+        return false;
     }
 
     private String largest(String toLowerCase) {
