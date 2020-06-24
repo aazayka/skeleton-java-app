@@ -11,6 +11,16 @@ public class QueryProcessorTest {
   QueryProcessor queryProcessor = new QueryProcessor();
 
   @Test
+  public void plus() {
+    assertThat(queryProcessor.process("what is 14 plus 14"), containsString("28"));
+  }
+
+  @Test
+  public void plus2() {
+    assertThat(queryProcessor.process("what is 14 plus 15"), containsString("29"));
+  }
+
+  @Test
   public void knowsWhoWroteRomeoAndJuliet() throws Exception {
     assertThat(queryProcessor.process("Who wrote Romeo And Juliet"), containsString("Shakespeare"));
   }
